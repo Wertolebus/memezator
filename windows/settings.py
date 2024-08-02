@@ -52,7 +52,7 @@ def run() -> None:
     fsz_l = ctk.CTkLabel(app, text="Font Size")
     cl_l = ctk.CTkLabel(app, text="Text Color (HEX)")
     phcl_l = ctk.CTkLabel(app, text="Placeholder Color (HEX)")
-    fp_l = ctk.CTkLabel(app, text="File Path")
+    fp_l = ctk.CTkLabel(app, text="Save Path")
     
     save = ctk.CTkButton(app, text="Save", command=lambda: update_config([font_fp, font_sz, text_cl, ph_cl, file_path], ["font_path", "font_size", "text_color_hex", "ph_color_hex", "save_path"]))
     
