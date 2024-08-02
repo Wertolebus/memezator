@@ -38,7 +38,7 @@ def run() -> None:
     global_vars.SETTINGS_OPEN = 1
     app = ctk.CTk()
     app.title("Settings")
-    app.geometry(f.center_window(app, 640, 200))
+    app.geometry(f.center_window(app, 640, 300))
     app.resizable(0, 0)
     
 
@@ -46,15 +46,17 @@ def run() -> None:
     font_sz = ctk.CTkEntry(app,width=280)
     text_cl = ctk.CTkEntry(app,width=280)
     ph_cl = ctk.CTkEntry(app,width=280)
+    file_path = ctk.CTkEntry(app,width=280)
 
     ffp_l = ctk.CTkLabel(app, text="Font Path")
     fsz_l = ctk.CTkLabel(app, text="Font Size")
     cl_l = ctk.CTkLabel(app, text="Text Color (HEX)")
     phcl_l = ctk.CTkLabel(app, text="Placeholder Color (HEX)")
+    fp_l = ctk.CTkLabel(app, text="File Path")
     
-    save = ctk.CTkButton(app, text="Save", command=lambda: update_config([font_fp, font_sz, text_cl, ph_cl], ["font_path", "font_size", "text_color_hex", "ph_color_hex"]))
+    save = ctk.CTkButton(app, text="Save", command=lambda: update_config([font_fp, font_sz, text_cl, ph_cl, file_path], ["font_path", "font_size", "text_color_hex", "ph_color_hex", "save_path"]))
     
-    load_from_config([font_fp, font_sz, text_cl, ph_cl], ["font_path", "font_size", "text_color_hex", "ph_color_hex"])
+    load_from_config([font_fp, font_sz, text_cl, ph_cl, file_path], ["font_path", "font_size", "text_color_hex", "ph_color_hex", "save_path"])
 
     ffp_l.grid(row=0, column=0, padx=20, pady=5)
     font_fp.grid(row=1, column=0, padx=20, pady=5)
@@ -65,6 +67,8 @@ def run() -> None:
     text_cl.grid(row=3, column=0, padx=20, pady=5)
     phcl_l.grid(row=2, column=2, padx=20, pady=5)
     ph_cl.grid(row=3, column=2, padx=20, pady=5)
+    file_path.grid(row=5, column=0, padx=20, pady=5)
+    fp_l.grid(row=4, column=0, padx=20, pady=5)
     
     save.place(rely=.9, relx=.5, anchor="center")
 
