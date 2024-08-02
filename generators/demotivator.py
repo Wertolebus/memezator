@@ -82,4 +82,4 @@ def run(img_fp : str, text1 : str = "", text2 : str = ""):
                 align='center'
             )
 
-    dem.show()
+    dem.save(read_config()["save_path"] + imported.filename.split("\\")[-1])
